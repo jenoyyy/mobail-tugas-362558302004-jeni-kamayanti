@@ -6,6 +6,7 @@ class Course {
   final int sks;
   final double progress; // progres silabus (0.0 - 1.0)
   final String room;
+  final String category;
 
   const Course({
     required this.code,
@@ -14,42 +15,56 @@ class Course {
     required this.sks,
     required this.progress,
     this.room = 'Lab Komputer 3',
+    required this.category,
   });
 
-  // Data dummy untuk bahan praktikum & testing
+  // Data mata kuliah Semester 5
   static List<Course> getSampleCourses() {
     return const [
       Course(
         code: 'TRPL501',
-        name: 'Pemrograman Perangkat Bergerak',
+        name: 'Pemrograman Web Lanjut + Praktikum',
+        lecturer: 'Tim Dosen TRPL',
+        sks: 3,
+        progress: 0.25,
+        room: 'Lab Komputer 3',
+        category: 'Praktikum',
+      ),
+      Course(
+        code: 'TRPL502',
+        name: 'Interoperabilitas + Praktikum',
+        lecturer: 'Tim Dosen TRPL',
+        sks: 3,
+        progress: 0.30,
+        room: 'Lab Komputer 3',
+        category: 'Praktikum',
+      ),
+      Course(
+        code: 'TRPL503',
+        name: 'Pancasila',
+        lecturer: 'Tim Dosen',
+        sks: 2,
+        progress: 0.40,
+        room: 'Ruang Teori 201',
+        category: 'Teori',
+      ),
+      Course(
+        code: 'TRPL504',
+        name: 'Pemrograman Perangkat Bergerak + Praktikum',
         lecturer: 'Sepyan Purnama Kristanto',
         sks: 4,
         progress: 0.25,
         room: 'Lab Komputer 3',
+        category: 'Praktikum',
       ),
       Course(
-        code: 'TRPL502',
-        name: 'Arsitektur Perangkat Lunak',
-        lecturer: 'Tim Dosen TRPL',
-        sks: 3,
-        progress: 0.40,
-        room: 'Ruang Teori 201',
-      ),
-      Course(
-        code: 'TRPL503',
-        name: 'Manajemen Proyek Agile & DevOps',
-        lecturer: 'Tim Dosen TRPL',
-        sks: 3,
-        progress: 0.60,
-        room: 'Ruang Teori 104',
-      ),
-      Course(
-        code: 'TRPL504',
-        name: 'Penjaminan Mutu Perangkat Lunak (QA)',
-        lecturer: 'Tim Dosen TRPL',
+        code: 'TRPL505',
+        name: 'Statistika',
+        lecturer: 'Tim Dosen',
         sks: 2,
-        progress: 0.15,
-        room: 'Lab Jaringan',
+        progress: 0.35,
+        room: 'Ruang Teori 201',
+        category: 'Teori',
       ),
     ];
   }
