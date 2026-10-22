@@ -1,59 +1,108 @@
-# Starter Template & Laporan Praktikum Pemrograman Mobile
+# Modul 06 — Login dan Session Dasar
 
-### Program Studi Sarjana Terapan Teknologi Rekayasa Perangkat Lunak (TRPL)
+## Identitas Mahasiswa
 
-**Politeknik Negeri Banyuwangi — Semester Ganjil 2026**
-
-Panduan interaktif lengkap: [Portal Codelabs TRPL Poliwangi](https://codelabs-poliwangi.github.io/MobileDev-Codelabs/)
-
----
-
-## 1. Identitas Mahasiswa
-
-> [!IMPORTANT]
->
-> **Wajib Mengganti Data di Bawah Ini!**
->
-> Autograding CI/CD akan memeriksa apakah nilai *placeholder* di bawah ini telah diganti dengan Nama dan NIM Anda yang sebenarnya. Jika belum diganti, pengujian `verify_documentation_test.dart` akan gagal.
-
-| Informasi | Data Mahasiswa |
+| Keterangan | Detail |
 |---|---|
-| **Nama Lengkap** | Jeni kamayanti |
+| **Nama** | Jeni Kamayanti |
 | **NIM** | 362558302004 |
 | **Kelas / Angkatan** | TRPL 2E / 2025 |
 | **Dosen Pengampu** | Sepyan Purnama Kristanto, M.Kom. |
+| **Mata Kuliah** | Pemrograman Perangkat Bergerak |
 
----
+## Deskripsi
 
-## 2. Peta Kemajuan Modul Praktikum
+Pada Modul 06 ini, saya belajar membuat fitur login dan session menggunakan Flutter. Saya melakukan pengujian login gagal, akun terkunci, login berhasil, dan logout. Pada bagian pengayaan, saya juga mempelajari beberapa cara penyimpanan session.
 
-Aplikasi ini menggunakan **Sistem Kontrol Akses Modul Terpusat (Smart Gating)** di file `lib/main.dart` agar mahasiswa belajar selaras dengan ritme materi dosen di kelas:
+## Fase A — Fundamental
 
-| Modul | Topik & Arsitektur | Status Akses | Perintah Self-Test Lokal | Bobot CI |
-|:---:|---|:---:|---|:---:|
-| **#01** | Mobile Ecosystem, Toolchain & Profile App | `⚡ Aktif` | `flutter test test/modul_01_test.dart` | 20 Pts |
-| **#02** | Declarative UI, BoxConstraints & Responsive Dashboard | `🔒 Terkunci (W02)` | `flutter test test/modul_02_test.dart` | 20 Pts |
-| **#03** | Navigation (GoRouter), Riverpod & 4-State KRS App | `🔒 Terkunci (W03)` | `flutter test test/modul_03_test.dart` | 20 Pts |
-| **#04** | Networking, REST API Dio & Repository Pattern | `🔒 Terkunci (W04)` | `flutter test test/modul_04_test.dart` | 15 Pts |
-| **Dok** | Verifikasi Identitas Asli Mahasiswa di README | `Wajib` | `flutter test test/verify_documentation_test.dart` | 10 Pts |
-| **Lint** | Dart Code Formatting & Static Analysis | `Wajib` | `flutter analyze --no-fatal-infos` | 15 Pts |
-| **Total** | **Skor Maksimal Evaluasi Autograding** | — | `flutter test` | **100 Pts** |
+### Pengujian Halaman Login
 
-> [!NOTE]
->
-> **Membuka Modul Terkunci saat di Laboratorium:**
->
-> Jika Anda sedang berada di sesi perkuliahan laboratorium dan dosen mengumumkan pembukaan modul, klik kartu modul yang terkunci di aplikasi lalu masukkan **Token Akses Kelas** yang dibagikan oleh dosen (misal: `TRPL-M02`, `TRPL-M03`, `TRPL-M04`, atau master passcode `POLIWANGI2026`).
+Saya mencoba membuka halaman login untuk melihat tampilan awal aplikasi sebelum pengguna masuk. Pada halaman ini, pengguna dapat memasukkan email dan password.
 
----
+![Pengujian Halaman Login](screenshots/login.png)
 
-## 3. Panduan Menjalankan & Menguji Kode
+### Pengujian Login Gagal
 
-### A. Persiapan Lingkungan (Setup)
+Saya mencoba memasukkan email atau password yang salah. Aplikasi menampilkan pesan bahwa login gagal sehingga pengguna mengetahui bahwa data yang dimasukkan belum benar.
+
+![Pengujian Login Gagal](screenshots/login-gagal.png)
+
+### Pengujian Akun Terkunci
+
+Saya juga mencoba fitur akun terkunci untuk melihat bagaimana aplikasi menangani percobaan login yang gagal. Ketika batas percobaan yang ditentukan aplikasi tercapai, akun akan dikunci sesuai aturan yang diterapkan.
+
+![Pengujian Akun Terkunci](screenshots/akun-terkunci.png)
+
+### Pengujian Login Berhasil
+
+Saya mencoba login menggunakan akun yang benar. Setelah proses login berhasil, aplikasi menampilkan halaman utama.
+
+![Pengujian Login Berhasil](screenshots/beranda.png)
+
+### Pengujian Logout
+
+Saya mencoba fitur logout untuk memastikan pengguna dapat keluar dari halaman utama dan kembali ke halaman login.
+
+![Pengujian Logout](screenshots/logout.png)
+
+## Fase B — Pengayaan
+
+Pada fase pengayaan, saya mencoba fitur login dan session serta mempelajari beberapa metode penyimpanan session yang tersedia pada aplikasi.
+
+### Pengujian Halaman Login Pengayaan
+
+Saya membuka halaman login pengayaan untuk mencoba fitur login pada bagian ini.
+
+![Pengujian Login Pengayaan](screenshots/login-pengayaan.png)
+
+### Pengujian Session Pengayaan
+
+Setelah login berhasil, saya memeriksa halaman session untuk melihat kondisi pengguna setelah masuk ke aplikasi.
+
+![Pengujian Session Pengayaan](screenshots/session-pengayaan.png)
+
+### Pengujian Session dengan Memori
+
+Saya mencoba penyimpanan session menggunakan memori aplikasi. Data session disimpan sementara di memori sesuai dengan implementasi yang dibuat.
+
+![Pengujian Session Memori](screenshots/session-memori.png)
+
+### Pengujian Session dengan Shared Preferences
+
+Saya mencoba menyimpan session menggunakan Shared Preferences untuk mempelajari cara menyimpan data pada aplikasi Flutter.
+
+![Pengujian Session Shared Preferences](screenshots/session-shared-preferences.png)
+
+### Pengujian Session dengan Penyimpanan Aman
+
+Saya mencoba penyimpanan session menggunakan penyimpanan aman untuk mempelajari cara menyimpan data yang bersifat sensitif.
+
+![Pengujian Session Penyimpanan Aman](screenshots/session-penyimpanan-aman.png)
+
+## Cara Menjalankan Aplikasi
+
+Buka terminal pada folder project, kemudian jalankan perintah berikut.
+
+### Fase A — Fundamental
 
 ```bash
-# 1. Unduh seluruh dependensi paket Flutter
-flutter pub get
+flutter run -t lib/main.dart
+```
 
-# 2. Jalankan aplikasi pada emulator atau perangkat fisik Android/iOS/Web
-flutter run
+### Fase B — Pengayaan
+
+```bash
+flutter run -t lib/main_pengayaan.dart
+```
+
+Untuk memeriksa kode dan menjalankan pengujian, gunakan perintah berikut.
+
+```bash
+flutter analyze
+flutter test
+```
+
+## Kesimpulan
+
+Dari praktikum Modul 06 ini, saya belajar membuat fitur login dan session pada Flutter. Saya juga belajar menangani login gagal, akun terkunci, login berhasil, dan logout. Pada bagian pengayaan, saya mencoba penyimpanan session menggunakan memori, Shared Preferences, dan penyimpanan aman. Dengan praktikum ini, saya menjadi lebih memahami cara kerja login dan session pada aplikasi Flutter.
