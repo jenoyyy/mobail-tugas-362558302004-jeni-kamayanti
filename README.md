@@ -1,108 +1,243 @@
-# Modul 06 — Login dan Session Dasar
+# Dokumentasi Praktikum Pemrograman Perangkat Bergerak
+
+Repository ini berisi hasil pengerjaan praktikum mata kuliah **Pemrograman Perangkat Bergerak** menggunakan Flutter.
 
 ## Identitas Mahasiswa
 
 | Keterangan | Detail |
 |---|---|
-| **Nama** | Jeni Kamayanti |
-| **NIM** | 362558302004 |
-| **Kelas / Angkatan** | TRPL 2E / 2025 |
-| **Dosen Pengampu** | Sepyan Purnama Kristanto, M.Kom. |
-| **Mata Kuliah** | Pemrograman Perangkat Bergerak |
+| Nama | Jeni Kamayanti |
+| NIM | 362558302004 |
+| Kelas | TRPL 2E |
+| Angkatan | 2025 |
+| Dosen Pengampu | Sepyan Purnama Kristanto, M.Kom. |
+| Mata Kuliah | Pemrograman Perangkat Bergerak |
+
+---
+
+# Modul 06 — Login dan Session
 
 ## Deskripsi
 
-Pada Modul 06 ini, saya belajar membuat fitur login dan session menggunakan Flutter. Saya melakukan pengujian login gagal, akun terkunci, login berhasil, dan logout. Pada bagian pengayaan, saya juga mempelajari beberapa cara penyimpanan session.
+Pada Modul 06, saya mempraktikkan pembuatan fitur login dan pengelolaan session menggunakan Flutter. Praktikum ini mencakup beberapa kondisi login, seperti login gagal, akun terkunci, login berhasil, dan logout.
+
+Pada bagian pengayaan, saya juga mencoba beberapa metode penyimpanan session, yaitu menggunakan memori, Shared Preferences, dan penyimpanan aman.
 
 ## Fase A — Fundamental
 
-### Pengujian Halaman Login
+### 1. Halaman Login
 
-Saya mencoba membuka halaman login untuk melihat tampilan awal aplikasi sebelum pengguna masuk. Pada halaman ini, pengguna dapat memasukkan email dan password.
+Halaman login merupakan tampilan awal sebelum pengguna masuk ke aplikasi.
 
-![Pengujian Halaman Login](screenshots/login.png)
+![Halaman Login](screenshots/login.png)
 
-### Pengujian Login Gagal
+### 2. Login Gagal
 
-Saya mencoba memasukkan email atau password yang salah. Aplikasi menampilkan pesan bahwa login gagal sehingga pengguna mengetahui bahwa data yang dimasukkan belum benar.
+Pengujian dilakukan dengan memasukkan data login yang tidak sesuai. Aplikasi menampilkan pesan bahwa proses login gagal.
 
-![Pengujian Login Gagal](screenshots/login-gagal.png)
+![Login Gagal](screenshots/login-gagal.png)
 
-### Pengujian Akun Terkunci
+### 3. Akun Terkunci
 
-Saya juga mencoba fitur akun terkunci untuk melihat bagaimana aplikasi menangani percobaan login yang gagal. Ketika batas percobaan yang ditentukan aplikasi tercapai, akun akan dikunci sesuai aturan yang diterapkan.
+Pengujian dilakukan untuk melihat respons aplikasi ketika batas percobaan login gagal telah tercapai.
 
-![Pengujian Akun Terkunci](screenshots/akun-terkunci.png)
+![Akun Terkunci](screenshots/akun-terkunci.png)
 
-### Pengujian Login Berhasil
+### 4. Login Berhasil
 
-Saya mencoba login menggunakan akun yang benar. Setelah proses login berhasil, aplikasi menampilkan halaman utama.
+Setelah memasukkan data akun yang benar, pengguna berhasil masuk ke halaman utama aplikasi.
 
-![Pengujian Login Berhasil](screenshots/beranda.png)
+![Beranda](screenshots/beranda.png)
 
-### Pengujian Logout
+### 5. Logout
 
-Saya mencoba fitur logout untuk memastikan pengguna dapat keluar dari halaman utama dan kembali ke halaman login.
+Fitur logout digunakan untuk mengakhiri session dan mengembalikan pengguna ke halaman login.
 
-![Pengujian Logout](screenshots/logout.png)
+![Logout](screenshots/logout.png)
 
 ## Fase B — Pengayaan
 
-Pada fase pengayaan, saya mencoba fitur login dan session serta mempelajari beberapa metode penyimpanan session yang tersedia pada aplikasi.
+Pada fase ini, saya mencoba penerapan session dengan beberapa metode penyimpanan.
 
-### Pengujian Halaman Login Pengayaan
+### 1. Halaman Login Pengayaan
 
-Saya membuka halaman login pengayaan untuk mencoba fitur login pada bagian ini.
+![Login Pengayaan](screenshots/login-pengayaan.png)
 
-![Pengujian Login Pengayaan](screenshots/login-pengayaan.png)
+### 2. Penyimpanan Session di Memori
 
-### Pengujian Session Pengayaan
+Penyimpanan session menggunakan memori bersifat sementara selama aplikasi berjalan.
 
-Setelah login berhasil, saya memeriksa halaman session untuk melihat kondisi pengguna setelah masuk ke aplikasi.
+![Session Memori](screenshots/session-memori.png)
 
-![Pengujian Session Pengayaan](screenshots/session-pengayaan.png)
+### 3. Penyimpanan Session dengan Shared Preferences
 
-### Pengujian Session dengan Memori
+Shared Preferences digunakan untuk mempelajari penyimpanan data sederhana pada aplikasi Flutter.
 
-Saya mencoba penyimpanan session menggunakan memori aplikasi. Data session disimpan sementara di memori sesuai dengan implementasi yang dibuat.
+![Session Shared Preferences](screenshots/session-shared-preferences.png)
 
-![Pengujian Session Memori](screenshots/session-memori.png)
+### 4. Penyimpanan Session Aman
 
-### Pengujian Session dengan Shared Preferences
+Pada bagian ini, saya mencoba metode penyimpanan aman untuk data session.
 
-Saya mencoba menyimpan session menggunakan Shared Preferences untuk mempelajari cara menyimpan data pada aplikasi Flutter.
+![Session Penyimpanan Aman](screenshots/session-penyimpanan-aman.png)
 
-![Pengujian Session Shared Preferences](screenshots/session-shared-preferences.png)
+## Menjalankan Modul 06
 
-### Pengujian Session dengan Penyimpanan Aman
+Jalankan perintah berikut dari direktori utama project.
 
-Saya mencoba penyimpanan session menggunakan penyimpanan aman untuk mempelajari cara menyimpan data yang bersifat sensitif.
-
-![Pengujian Session Penyimpanan Aman](screenshots/session-penyimpanan-aman.png)
-
-## Cara Menjalankan Aplikasi
-
-Buka terminal pada folder project, kemudian jalankan perintah berikut.
-
-### Fase A — Fundamental
+**Fase A — Fundamental**
 
 ```bash
 flutter run -t lib/main.dart
 ```
 
-### Fase B — Pengayaan
+**Fase B — Pengayaan**
 
 ```bash
 flutter run -t lib/main_pengayaan.dart
 ```
 
-Untuk memeriksa kode dan menjalankan pengujian, gunakan perintah berikut.
+---
+
+# Modul 11 — Performance Optimization
+
+## Deskripsi
+
+Pada Modul 11, saya mempelajari cara mengoptimalkan tampilan daftar dengan jumlah data yang banyak. Aplikasi yang dibuat menampilkan 1.000 data tugas dengan fitur pencarian dan filter berdasarkan status tugas.
+
+Dalam praktikum ini, saya menggunakan `ListView.builder` agar item daftar dibuat sesuai kebutuhan tampilan, sehingga tidak semua kartu harus dibuat sekaligus.
+
+## Fitur Aplikasi
+
+- Menampilkan 1.000 data tugas.
+- Menampilkan tugas yang masih aktif.
+- Menampilkan tugas yang sudah selesai.
+- Mencari tugas berdasarkan kata kunci.
+- Menggunakan `ListView.builder` untuk menampilkan daftar secara lebih efisien.
+
+## Fase A — Tampilan dan Fitur
+
+### 1. Menampilkan Semua Tugas
+
+Pada tampilan awal, aplikasi menampilkan 1.000 dari 1.000 tugas.
+
+![Semua Tugas](screenshots/01_all_tasks.png)
+
+### 2. Filter Aktif
+
+Filter Aktif digunakan untuk menampilkan tugas yang belum selesai. Jumlah tugas yang ditampilkan adalah 750.
+
+![Filter Aktif](screenshots/02_active_filter.png)
+
+### 3. Filter Selesai
+
+Filter Selesai digunakan untuk menampilkan tugas yang sudah selesai. Jumlah tugas yang ditampilkan adalah 250.
+
+![Filter Selesai](screenshots/03_completed_filter.png)
+
+### 4. Pencarian Tugas
+
+Saya mencoba pencarian menggunakan kata kunci `tugas praktikum 0002`. Aplikasi menampilkan tugas yang sesuai dengan kata kunci tersebut.
+
+![Pencarian Tugas](screenshots/04_search_task.png)
+
+## Fase B — Pengujian dan Analisis
+
+### 1. Widget Test
+
+Widget test dilakukan untuk memeriksa beberapa fungsi aplikasi, yaitu:
+
+- Memastikan daftar menggunakan builder dan tidak membuat 1.000 kartu sekaligus.
+- Memastikan pencarian membatasi hasil tanpa mengubah sumber data.
+- Memastikan filter Selesai hanya menampilkan tugas yang sudah selesai.
+
+Perintah untuk menjalankan pengujian:
 
 ```bash
-flutter analyze
-flutter test
+flutter test test/modul_11_test.dart
 ```
 
-## Kesimpulan
+Hasil pengujian:
 
-Dari praktikum Modul 06 ini, saya belajar membuat fitur login dan session pada Flutter. Saya juga belajar menangani login gagal, akun terkunci, login berhasil, dan logout. Pada bagian pengayaan, saya mencoba penyimpanan session menggunakan memori, Shared Preferences, dan penyimpanan aman. Dengan praktikum ini, saya menjadi lebih memahami cara kerja login dan session pada aplikasi Flutter.
+![Hasil Widget Test](screenshots/05_test_passed.png)
+
+### 2. Flutter Analyze
+
+Flutter Analyze digunakan untuk memeriksa apakah terdapat masalah pada kode yang dibuat.
+
+Perintah yang digunakan:
+
+```bash
+flutter analyze lib/modul_11/modul_11_app.dart test/modul_11_test.dart
+```
+
+Hasil analisis:
+
+![Hasil Flutter Analyze](screenshots/06_flutter_analyze.png)
+
+## Menjalankan Modul 11
+
+Untuk menjalankan aplikasi:
+
+```bash
+flutter pub get
+flutter run
+```
+
+Untuk menjalankan widget test Modul 11:
+
+```bash
+flutter test test/modul_11_test.dart
+```
+
+Untuk melakukan analisis kode Modul 11:
+
+```bash
+flutter analyze lib/modul_11/modul_11_app.dart test/modul_11_test.dart
+```
+
+## Kesimpulan Modul 11
+
+Dari praktikum ini, saya belajar menggunakan `ListView.builder` untuk menampilkan data dalam jumlah banyak secara lebih efisien. Saya juga mempraktikkan fitur pencarian dan filter status pada daftar tugas.
+
+Selain itu, saya menjalankan widget test untuk memeriksa fungsi daftar, pencarian, dan filter agar berjalan sesuai dengan skenario pengujian.
+
+---
+
+# Struktur Folder
+
+Berikut gambaran struktur folder dokumentasi project:
+
+```text
+project/
+├── lib/
+│   ├── modul_06/
+│   ├── modul_11/
+│   ├── pengayaan/
+│   └── main.dart
+├── test/
+│   └── modul_11_test.dart
+├── screenshots/
+│   ├── 01_all_tasks.png
+│   ├── 02_active_filter.png
+│   ├── 03_completed_filter.png
+│   ├── 04_search_task.png
+│   ├── 05_test_passed.png
+│   ├── 06_flutter_analyze.png
+│   ├── akun-terkunci.png
+│   ├── beranda.png
+│   ├── login.png
+│   ├── login-gagal.png
+│   ├── login-pengayaan.png
+│   ├── logout.png
+│   ├── session-memori.png
+│   ├── session-penyimpanan-aman.png
+│   └── session-shared-preferences.png
+├── pubspec.yaml
+└── README.md
+```
+
+
+
+
+**Hak Cipta © 2026 Jurusan Bisnis dan Informatika (JBI), Politeknik Negeri Banyuwangi.**
